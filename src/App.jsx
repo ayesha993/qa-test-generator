@@ -127,7 +127,7 @@ Return ONLY valid JSON. No markdown, no preamble.`;
 const res = await fetch("/api/claude", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ model: CLAUDE_MODEL, max_tokens: 1000, messages: [{ role: "user", content: prompt }] }),
+    body: JSON.stringify({ model: CLAUDE_MODEL, max_tokens: 4000, messages: [{ role: "user", content: prompt }] }),
   });
   if (!res.ok) throw new Error(`Claude API error: ${res.status}`);
   const data = await res.json();
